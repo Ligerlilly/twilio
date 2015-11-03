@@ -1,0 +1,5 @@
+<ul>
+  <% @addresses.each do |address| %>
+     <li><%= link_to new_message_path(number: address.number) do %><%= address.name %>  <%= address.number %><% end %></li>
+  <% end %>
+</ul>

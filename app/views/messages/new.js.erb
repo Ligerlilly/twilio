@@ -1,0 +1,18 @@
+$('#address-list').html('<ul><% @addresses.each do |address| %> <li class="address-li"><%= address.name  %></li><% end %></ul>')
+$('.address-li').click(function() {
+  $('#name_search').val($(this).text());
+  $('#address-list').empty();
+  $.ajax({
+    url: '/addresses',
+    method: 'get',
+    dataType: 'json',
+    data: { "search": $(this).text() },
+    success: function(data) {
+      $('#to').val(data.number);
+      $('#hidden-address-id').attr('value', data.id);
+    },
+    error: function(error) {
+      console.log(error['response']);
+    }
+  });
+});

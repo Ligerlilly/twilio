@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<twilio account sid>:<twilio auth token>@api.twilio.com/2010-04-01/Accounts/<twilio
+      account sid>/Messages.json
+    body:
+      encoding: US-ASCII
+      string: Body=hi&To=9712429948&From=5005550006
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '37'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match,
+        If-Unmodified-Since
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - ETag
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 02 Nov 2015 18:14:15 GMT
+      Strict-Transport-Security:
+      - max-age=15768000
+      Twilio-Request-Duration:
+      - '0.050'
+      Twilio-Request-Id:
+      - RQ0d623b6729e14af18a33f32f4f14e869
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+      Content-Length:
+      - '690'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"sid": "SMd668d103a9824086a9e60f75f7d49790", "date_created": "Mon,
+        02 Nov 2015 18:14:15 +0000", "date_updated": "Mon, 02 Nov 2015 18:14:15 +0000",
+        "date_sent": null, "account_sid": "<twilio account sid>", "to": "+19712429948",
+        "from": "5005550006", "body": "hi", "status": "queued", "num_segments": "1",
+        "num_media": "0", "direction": "outbound-api", "api_version": "2010-04-01",
+        "price": null, "price_unit": "USD", "uri": "/2010-04-01/Accounts/<twilio account
+        sid>/Messages/SMd668d103a9824086a9e60f75f7d49790.json", "subresource_uris":
+        {"media": "/2010-04-01/Accounts/<twilio account sid>/Messages/SMd668d103a9824086a9e60f75f7d49790/Media.json"}}'
+    http_version: 
+  recorded_at: Mon, 02 Nov 2015 18:14:15 GMT
+recorded_with: VCR 2.9.3

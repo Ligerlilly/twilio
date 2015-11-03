@@ -1,0 +1,42 @@
+<%= form_for(@message) do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% @message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.fields_for :addresses do |ff| %>
+    <div class="field">
+      <%= ff.label :name %>
+      <%= ff.text_field :name, class: 'form-control', id: 'name_search', autocomplete: :off %>
+    </div>
+  <div id='address-list'>
+
+  </div>
+
+  <div class='to'>
+    <div class="field">
+      <%= ff.label :number %>
+      <%= ff.text_field :number, class: 'form-control', id: 'to' %>
+    </div>
+  </div>
+
+  <%= ff.hidden_field :id, class: 'form-control', id: 'hidden-address-id' %>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_field :body, class: 'form-control'  %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit class:'btn btn-success' %>
+  </div>
+<% end %>
